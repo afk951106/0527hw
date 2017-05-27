@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        img {
+            margin: auto;
+            display: block
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">預設按鈕</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <img src="img1.jpg" alt="img1" class="col-sm-12 img1">
+    <div class="containt">
+        <input type="text" name="submit" class="col-sm-3 textcontaint">
+        <button type="button" class="col-sm-3 btn submit">執行</button>
+        <button type="button" class="col-sm-3 btn btn-primary">展開</button>
+        <button type="button" class="col-sm-3 btn btn-success">收放</button>
+    </div>
+</body>
+<script>
+    $(document).ready(function () {
+        $(".submit").on("click", function () {
+            $(".dropdown-menu").append("<li><a href=" + "#" + ">" + $(".textcontaint").val() +
+                "</a></li>")
+        });
+        $(".btn-primary").on("click", function () {
+            $(".img1").show()
+        });
+            $(".btn-success").on("click", function () {
+            $(".img1").hide()
+        });
+
+    });
+</script>
+
+</html>
